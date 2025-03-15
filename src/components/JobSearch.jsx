@@ -31,7 +31,7 @@ function JobSearch({ setJobs }) {
   
     try {
       console.log(cityMapping[selectedCity]);
-      const response = await fetch(`http://127.0.0.1:4061/api/scrape-jobs?jobTitle=${encodeURIComponent(jobTitle)}&experience=${encodeURIComponent(experience)}&cityTypeGid=${encodeURIComponent(selectedCity)}`, {
+      const response = await fetch(`https://jobboard-backend-d39t.onrender.com/api/scrape-jobs?jobTitle=${encodeURIComponent(jobTitle)}&experience=${encodeURIComponent(experience)}&cityTypeGid=${encodeURIComponent(selectedCity)}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -64,7 +64,7 @@ function JobSearch({ setJobs }) {
     // setLoading(true);
     
     try {
-      const response = await fetch(`http://127.0.0.1:4061/api/jobs`, {
+      const response = await fetch(`https://jobboard-backend-d39t.onrender.com/api/jobs`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

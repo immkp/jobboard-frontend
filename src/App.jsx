@@ -17,7 +17,7 @@ function App() {
 
   const fetchJobs = async (retryCount = 0, isMounted) => {
     try {
-      const response = await fetch("http://127.0.0.1:4061/api/jobs");
+      const response = await fetch("https://jobboard-backend-d39t.onrender.com/api/jobs");
       const result = await response.json();
 
       if (result.data.length > 0) {
