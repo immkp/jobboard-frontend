@@ -1,0 +1,240 @@
+/* Reset all margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: "Poppins", sans-serif;
+  background: #1f1c2c;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Wrapper to center everything */
+.wrapper {
+  width: 100%;
+  max-width: 1200px; /* Limit the maximum width */
+  margin: 0 auto; /* Center the wrapper */
+  padding: 0 20px; /* Add some padding to prevent edge overflow */
+}
+
+/* Main Container */
+.container {
+  width: 100%;
+  padding: 40px;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  background: #1f1c2c;
+  border-radius: 15px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* Title */
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #7290eb;
+}
+
+/* Job List (Fixed Grid) */
+.job-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* Fixed 3 columns */
+  gap: 25px;
+  align-items: stretch; /* Ensure all cards stretch to the same height */
+  grid-auto-rows: 1fr; /* Ensure rows have equal height */
+  width: 100%; /* Ensure the grid takes full width */
+}
+
+/* Job Card */
+.job-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 25px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column; /* Make the card a flex container */
+  justify-content: space-between; /* Space out content evenly */
+  height: 100%; /* Ensure all cards take full height */
+  min-height: 350px; /* Set a minimum height for consistency */
+  box-sizing: border-box; /* Include padding in the width calculation */
+  width: 100%; /* Ensure the card takes full width of its grid cell */
+}
+
+.job-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Job Header */
+.job-header {
+  display: flex;
+  flex-direction: column; /* Stack title and company vertically */
+  gap: 15px; /* Increased gap between title and company */
+  margin-bottom: 20px; /* Space below the header */
+}
+
+/* Job Title */
+.job-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #7290eb;
+  margin: 0;
+  display: -webkit-box; /* Enable line clamping */
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical; /* Vertical orientation */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Add ellipsis for overflow */
+}
+
+/* Company Name */
+.company {
+  font-size: 1.2rem; /* Bigger font size */
+  font-weight: 600; /* Bolder font weight */
+  color: #d1d1d1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Location & Experience */
+.location,
+.experience {
+  font-size: 1rem;
+  color: #f0f0f0;
+  margin: 10px 0; /* Consistent spacing */
+  display: flex;
+  align-items: center; /* Align icons with text */
+  gap: 8px; /* Space between icon and text */
+}
+
+.location i,
+.experience i {
+  font-size: 1rem;
+  color: #7290eb;
+}
+
+/* Apply Button */
+.apply-btn {
+  display: inline-block;
+  background-color: #7290eb;
+  color: #1f1c2c;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-top: 20px; /* Push the button to the bottom */
+  width: 100%; /* Full width button */
+}
+
+.apply-btn:hover {
+  background-color: #5134d3;
+  transform: scale(1.05);
+}
+
+/* Loading Text */
+.loading-text {
+  font-size: 1.2rem;
+  color: #f0f0f0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .container {
+    width: 95%;
+    padding: 30px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .job-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columns for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .job-list {
+    grid-template-columns: repeat(1, minmax(0, 1fr)); /* 1 column for mobile */
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+  }
+
+  .job-card {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .apply-btn {
+    padding: 8px 15px;
+  }
+}
+
+/* Pagination Styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  gap: 10px;
+}
+
+.pagination-btn {
+  background-color: #7290eb;
+  color: #1f1c2c;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.pagination-btn:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background-color: #5134d3;
+  transform: scale(1.05);
+}
+
+.pagination-btn.active {
+  background-color: #5134d3;
+  color: #fff;
+}
+
+.page-number {
+  font-size: 1rem;
+  color: #f0f0f0;
+}
